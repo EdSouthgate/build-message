@@ -28,5 +28,19 @@ int main(void)
     strcat_s(message, sizeof(message), " is learning C!"); // should be no more than 94 characters long
 
     puts(message);
+
+    /*
+     * Demonstrate the difference between string size and string length.
+     */
+
+    printf("Please enter a string: ");
+
+    char input[40];
+    scanf("%39s", input);
+
+    int length = strlen(input); // the length of the string minus the null terminator
+    int size = sizeof(input); // the size of the string buffer in bytes
+
+    printf("The string \"%s\" is %d characters long and it's size is %d bytes.\n", input, length, size);
     return 0;
 }
